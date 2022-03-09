@@ -1,0 +1,40 @@
+projects:
+  - name: 'change-me'
+
+    environments:
+      - name: 'Dev'
+        slug: 'dev'
+        configs:
+          - slug: 'dev'
+
+      - name: 'Stage'
+        slug: 'stage'
+        configs:
+          - slug: 'stage'
+
+      - name: 'Live'
+        slug: 'live'
+        configs:
+          - slug: 'live'
+
+    secrets:
+      dev:
+        APP_ENV: 'dev'
+        APP_PROJECT: 'template'
+        APP_SECRET: ''
+        DATABASE_URL: 'mysql://dev:dev@127.0.0.1:3306/dev'
+        MAILER_URL: 'smtp://user:pass@smtp.mailtrap.io:2525?encryption=tls&auth_mode=login'
+
+      stage:
+        APP_ENV: 'prod'
+        APP_PROJECT: 'template'
+        APP_SECRET: ''
+        DATABASE_URL: 'mysql://stage:stage@127.0.0.1:3306/stage'
+        MAILER_URL: 'smtp://user:pass@127.0.0.1:465?encryption=tls&auth_mode=login'
+
+      live:
+        APP_ENV: 'prod'
+        APP_PROJECT: 'template'
+        APP_SECRET: ''
+        DATABASE_URL: 'mysql://prod:prod@127.0.0.1:3306/prod'
+        MAILER_URL: 'smtp://user:pass@127.0.0.1:465?encryption=tls&auth_mode=login'
